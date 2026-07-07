@@ -6,7 +6,7 @@ const addTaskTitle = document.querySelector("#add-task-title");
 const addTaskDesc = document.querySelector("#add-task-desc");
 const addTaskCategory = document.querySelector("#add-task-category");
 let targetElementId;
-let isImpChecked
+let isImpChecked;
 
 function todoListTasksUI() {
   let todoListTaskArray = getTodoListTasks();
@@ -14,17 +14,37 @@ function todoListTasksUI() {
 
   todoListTaskArray.map((t) => {
     todoListTasksRender.innerHTML += `
-        <tr>
-            <td>${t.title}</td>
-            <td>${t.description}</td>
-            <td>${t.category}</td>
-            <td><input type="checkbox" id="add-task-isImp" /></td>
-            <td><input type="checkbox" id="add-task-completed" /></td>
-            <td>
-                <button data-edit-id="${t.id}" id="add-task-edit">Edit</button>
-                <button data-delete-id="${t.id}" id="add-task-delete">Delete</button>
-            </td>
-        </tr>
+              <tr style="text-decoration: ${t.completed ? "line-through" : "none"};">
+                <span>
+                <td>${t.title}</td>
+                <td>${t.description}</td>
+                <td>${t.category}</td>
+                </span>
+                <td>
+                  <input
+                    type="checkbox"
+                    data-isimp-id="${t.id}"
+                    id="add-task-isImp"
+                    ${t.isImp ? "checked" : ""}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    data-completed-id="${t.id}"
+                    id="add-task-completed"
+                    ${t.completed ? "checked" : ""}
+                  />
+                </td>
+                <td>
+                  <button data-edit-id="${t.id}" id="add-task-edit">
+                    Edit
+                  </button>
+                  <button data-delete-id="${t.id}" id="add-task-delete">
+                    Delete
+                  </button>
+                </td>
+              </tr>
     `;
   });
 }
@@ -40,6 +60,8 @@ function editTask(id) {
 }
 
 function deleteTask(id) {
+  let confirmDelete = confirm("Are you sure you want to delete?");
+  if (!confirmDelete) return;
   let todoListTaskArray = getTodoListTasks();
   todoListTaskArray = todoListTaskArray.filter((t) => t.id !== id);
 
@@ -58,6 +80,8 @@ addTaskForm.addEventListener("submit", (e) => {
       title: addTaskTitle.value,
       description: addTaskDesc.value,
       category: addTaskCategory.value,
+      isImp: false,
+      completed: false,
     };
   } else {
     const obj = {
@@ -65,6 +89,8 @@ addTaskForm.addEventListener("submit", (e) => {
       title: addTaskTitle.value,
       description: addTaskDesc.value,
       category: addTaskCategory.value,
+      isImp: false,
+      completed: false,
     };
     todoListTaskArray.push(obj);
   }
@@ -83,10 +109,33 @@ todoListTasksRender.addEventListener("click", (e) => {
   if (id === "add-task-edit") {
     targetElementId = target.dataset.editId;
     editTask(targetElementId);
+
   } else if (id === "add-task-delete") {
     targetElementId = target.dataset.deleteId;
     deleteTask(targetElementId);
-  } else if (id === "add-task-isImp") { 
-    target.checked;
+
+  } else if (id === "add-task-isImp") {
+    let todoListTaskArray = getTodoListTasks();
+    targetElementId = target.dataset.isimpId;
+    let idx = todoListTaskArray.findIndex((t) => t.id === targetElementId);
+    todoListTaskArray[idx] = {
+      ...todoListTaskArray[idx],
+      isImp: target.checked,
+    };
+    localStorage.setItem("todo-list-tasks", JSON.stringify(todoListTaskArray));
+    targetElementId = undefined;
+
+  } else if (id === "add-task-completed") {
+    let todoListTaskArray = getTodoListTasks();
+    targetElementId = target.dataset.completedId;
+    let idx = todoListTaskArray.findIndex((t) => t.id === targetElementId);
+    todoListTaskArray[idx] = {
+      ...todoListTaskArray[idx],
+      completed: target.checked,
+    };
+    localStorage.setItem("todo-list-tasks", JSON.stringify(todoListTaskArray));
+    targetElementId = undefined;
   }
+  
+  todoListTasksUI();
 });
