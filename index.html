@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <h1>Productivity Dashboard</h1>
+        <button>Dark mode</button>
+      </nav>
+      <div class="dashboard">
+        <div class="dashboard-card" id="todo-list">Todo List</div>
+        <div class="dashboard-card" id="weather-widget">Weather</div>
+        <div class="dashboard-card" id="time-date-display">Date Time</div>
+        <div class="dashboard-card" id="daily-goals">Daily Goals</div>
+        <div class="dashboard-card" id="daily-planner">Daily Planner</div>
+        <div class="dashboard-card" id="motivation-quote">Motivation Quote</div>
+        <div class="dashboard-card" id="pomodoro-timer">Pomodoro Timer</div>
+      </div>
+      <div id="todo-list-div">
+        <form id="add-task-form">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="add-task-title" required />
+          <label for="description">Description</label>
+          <input type="text" name="description" id="add-task-desc" />
+          <label for="category">Category</label>
+          <select name="category" id="add-task-category">
+            <option value="" selected disabled>Select a Category</option>
+            <option value="work/professional">Work / Professional</option>
+            <option value="health/wellness">Health / Wellness</option>
+            <option value="home/household">Home / Household</option>
+            <option value="hobbies/personal">Hobbies / Personal</option>
+          </select>
+          <button id="add-task-btn">Add Task</button>
+        </form>
+        <div>
+          <table id="todo-list-table">
+            <thead>
+              <tr>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Category</td>
+                <td>Is Important?</td>
+                <td>Completed?</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody id="todo-list-tasks-render"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="JS Files/todoList.js"></script>
+  </body>
+</html>
