@@ -21,14 +21,14 @@
         <div class="dashboard-card" id="dashboard-motivation-quote">
           Motivation Quote
         </div>
+        <div class="dashboard-card" id="dashboard-pomodoro-timer">
+          Pomodoro Timer
+        </div>
         <div class="dashboard-card" id="dashboard-weather-widget">Weather</div>
         <div class="dashboard-card" id="dashboard-time-date-display">
           Date Time
         </div>
         <div class="dashboard-card" id="dashboard-daily-goals">Daily Goals</div>
-        <div class="dashboard-card" id="dashboard-pomodoro-timer">
-          Pomodoro Timer
-        </div>
       </div>
 
       <div id="todo-list-div" style="display: none">
@@ -46,6 +46,7 @@
             <option value="health/wellness">Health / Wellness</option>
             <option value="home/household">Home / Household</option>
             <option value="hobbies/personal">Hobbies / Personal</option>
+            <option value="other">Other</option>
           </select>
           <button id="add-task-btn">Add Task</button>
         </form>
@@ -103,12 +104,24 @@
         </table>
       </div>
 
-      <div id="motivation-quote-div" style="display: none;">
+      <div id="motivation-quote-div" style="display: none">
         <button id="motivation-back-btn">Back to dashboard</button>
-
         <div id="motivation-quote"></div>
         <div id="quote-author"></div>
         <button id="new-quote-btn">New Quote</button>
+      </div>
+
+      <div id="pomodoro-div" style="display: none">
+        <button id="pomodoro-back-btn">Back to dashboard</button>
+        <div class="navigation">
+          <button id="pomodoro-nav-btn">Pomodoro</button>
+          <button id="pomodoro-short-break-btn">Short Break</button>
+        </div>
+        <div id="pomodoro-countdown">25:00</div>
+        <div id="pomodoro-current-session">Work Session</div>
+        <button id="pomodoro-start-btn">Start</button>
+        <button id="pomodoro-stop-btn">Stop</button>
+        <button id="pomodoro-reset-btn">Reset</button>
       </div>
     </main>
     <script type="module" src="script.js"></script>
@@ -116,5 +129,6 @@
     <script type="module" src="JS Files/dailyPlanner.js"></script>
     <script type="module" src="JS Files/dashboard.js"></script>
     <script type="module" src="JS Files/motivationQuote.js"></script>
+    <script type="module" src="JS Files/pomodoro.js"></script>
   </body>
 </html>

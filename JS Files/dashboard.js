@@ -43,46 +43,13 @@ toggleBtwDashboardAndFeatures(
   "#motivation-back-btn",
 );
 
-const dashboardWeatherWidget = document.querySelector(
-  "#dashboard-weather-widget",
-);
-const dashboardTimeDateDisplay = document.querySelector(
-  "#dashboard-time-date-display",
-);
-const dashboardDailyGoals = document.querySelector("#dashboard-daily-goals");
-const dashboardPomodoroTimer = document.querySelector(
+// pomodoro
+toggleBtwDashboardAndFeatures(
   "#dashboard-pomodoro-timer",
+  "#pomodoro-div",
+  "#pomodoro-back-btn",
 );
 
-// todo list
-// const dashboardTodoList = document.querySelector("#dashboard-todo-list");
-// const todoListDiv = document.querySelector("#todo-list-div");
-// const todoListBackBtn = document.querySelector("#todo-list-back-btn");
-// dashboardTodoList.addEventListener("click", () => {
-//   todoListDiv.style.display = "inline";
-//   dashboardDiv.style.display = "none";
-// });
-// todoListBackBtn.addEventListener("click", () => {
-//   todoListDiv.style.display = "none";
-//   dashboardDiv.style.display = "inline";
-// });
-
-// daily plannner
-// const dashboardDailyPlanner = document.querySelector(
-//   "#dashboard-daily-planner",
-// );
-// const dailyPlannerDiv = document.querySelector("#daily-planner-div");
-// const dailyPlannerBackBtn = document.querySelector("#daily-planner-back-btn");
-// dashboardDailyPlanner.addEventListener("click", () => {
-//   dailyPlannerDiv.style.display = "inline";
-//   dashboardDiv.style.display = "none";
-// });
-// dailyPlannerBackBtn.addEventListener("click", () => {
-//   dailyPlannerDiv.style.display = "none";
-//   dashboardDiv.style.display = "inline";
-// });
-
-// motivation quote
-// const dashboardMotivationQuote = document.querySelector(
-//   "#dashboard-motivation-quote",
-// );
+//   "#dashboard-weather-widget",
+//   "#dashboard-time-date-display",
+// const dashboardDailyGoals = document.querySelector("#dashboard-daily-goals");
