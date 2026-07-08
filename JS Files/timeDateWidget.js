@@ -12,8 +12,10 @@ async function getTimeDate() {
     const data = await response.json();
 
     timeWidget.innerHTML = `
-    ${data.hour > 12 ? String(data.hour-12).padStart(2, "0") : String(data.hour).padStart(2, "0")}:${String(data.minute).padStart(2, "0")} ${data.hour <= 12 ? "AM" : "PM"}`;
-    dateWidget.innerHTML = data.date;
+    ${data.hour > 12 ? String(data.hour - 12).padStart(2, "0") : String(data.hour).padStart(2, "0")}:${String(data.minute).padStart(2, "0")} ${data.hour <= 12 ? "AM" : "PM"}`;
+    console.log(data);
+
+    dateWidget.innerHTML = `${String(data.day).padStart(2, "0")}/${String(data.month).padStart(2, "0")}/${data.year}`;
     dayWidget.innerHTML = data.dayOfWeek;
   } catch (error) {
     console.error(error);
