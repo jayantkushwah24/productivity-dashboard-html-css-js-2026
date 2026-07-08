@@ -50,6 +50,10 @@ toggleBtwDashboardAndFeatures(
   "#pomodoro-back-btn",
 );
 
+// weather widget
+// toggleBtwDashboardAndFeatures(
 //   "#dashboard-weather-widget",
-//   "#dashboard-time-date-display",
-// const dashboardDailyGoals = document.querySelector("#dashboard-daily-goals");
+//   "#weather-widget-div",
+//   "#weather-back-btn",
+// );
+
