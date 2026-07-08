@@ -12,13 +12,13 @@ function toggleBtwDashboardAndFeatures(
   let featureBackBtn = document.querySelector(featureBackBtnId);
 
   dashboardFeature.addEventListener("click", () => {
-    featureDiv.style.display = "inline";
+    featureDiv.style.display = "grid";
     dashboardDiv.style.display = "none";
   });
 
   featureBackBtn.addEventListener("click", () => {
     featureDiv.style.display = "none";
-    dashboardDiv.style.display = "inline";
+    dashboardDiv.style.display = "grid";
   });
 }
 

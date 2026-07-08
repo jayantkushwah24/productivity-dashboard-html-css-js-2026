@@ -11,27 +11,11 @@
       <!-- navbar -->
       <nav>
         <h1>Productivity Dashboard</h1>
-        <button>Dark mode</button>
+        <button id="dark-mode-btn">Dark mode</button>
       </nav>
 
       <!-- dashboard -->
       <div id="dashboard-div">
-        <div class="dashboard-card" id="dashboard-todo-list">Todo List</div>
-        <div class="dashboard-card" id="dashboard-daily-planner">
-          Daily Planner
-        </div>
-        <div class="dashboard-card" id="dashboard-motivation-quote">
-          Motivation Quote
-        </div>
-        <div class="dashboard-card" id="dashboard-pomodoro-timer">
-          Pomodoro Timer
-        </div>
-
-        <div class="dashboard-card" id="dashboard-daily-goals">
-          <div class="heading">Daily Goals</div>
-          <div id="daily-goals-status"></div>
-        </div>
-
         <div id="weather-widget-div">
           <div id="weather-location">📍Indore</div>
           <h1 id="weather-temperature"></h1>
@@ -44,6 +28,25 @@
           <h1 id="time-widget"></h1>
           <div id="date-widget"></div>
           <div id="day-widget"></div>
+        </div>
+        <div class="dashboard-card" id="dashboard-todo-list">📝 Todo List</div>
+        <div class="dashboard-card" id="dashboard-daily-planner">
+          📆 Daily Planner
+        </div>
+        <div class="dashboard-card" id="dashboard-motivation-quote">
+          💪 Motivation Quote
+        </div>
+        <div class="dashboard-card" id="dashboard-pomodoro-timer">
+          🍅 Pomodoro Timer
+        </div>
+
+        <div
+          class="dashboard-card"
+          id="dashboard-daily-goals"
+          style="display: flex; flex-direction: column"
+        >
+          <div class="heading">🎯 Daily Goals</div>
+          <div id="daily-goals-status"></div>
         </div>
       </div>
 
@@ -139,9 +142,11 @@
         </div>
         <div id="pomodoro-countdown">25:00</div>
         <div id="pomodoro-current-session">Work Session</div>
-        <button id="pomodoro-start-btn">Start</button>
-        <button id="pomodoro-stop-btn">Stop</button>
-        <button id="pomodoro-reset-btn">Reset</button>
+        <div class="control-btn">
+          <button id="pomodoro-start-btn">Start</button>
+          <button id="pomodoro-stop-btn">Stop</button>
+          <button id="pomodoro-reset-btn">Reset</button>
+        </div>
       </div>
 
       <!-- daily goals -->

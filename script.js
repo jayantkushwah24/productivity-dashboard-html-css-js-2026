@@ -1,3 +1,10 @@
+const body = document.querySelector("body");
+const darkModeBtn = document.querySelector("#dark-mode-btn");
+
+darkModeBtn.addEventListener("click", () => {
+  body.classList.toggle("dark");
+});
+
 export function getTodoListTasks() {
   const result = JSON.parse(localStorage.getItem("todo-list-tasks")) || [];
   return result;
