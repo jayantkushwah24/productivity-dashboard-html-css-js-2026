@@ -50,10 +50,3 @@ toggleBtwDashboardAndFeatures(
   "#pomodoro-back-btn",
 );
 
-// weather widget
-// toggleBtwDashboardAndFeatures(
-//   "#dashboard-weather-widget",
-//   "#weather-widget-div",
-//   "#weather-back-btn",
-// );
-

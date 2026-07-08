@@ -8,11 +8,10 @@ const url =
 
 async function getWeatherData() {
   try {
-    let response = await fetch(url, {
+    const response = await fetch(url, {
       method: "GET",
     });
-    let data = await response.json();
-    console.log(data);
+    const data = await response.json();
     weatherTemp.innerHTML = `${data.current.temperature_2m} ${data.current_units.temperature_2m}`;
     weatherHumidity.innerHTML = `Relative Humidity: ${data.current.relative_humidity_2m} ${data.current_units.relative_humidity_2m}`;
     weatherWind.innerHTML = `Wind Speed: ${data.current.wind_speed_10m} ${data.current_units.wind_speed_10m}`;
