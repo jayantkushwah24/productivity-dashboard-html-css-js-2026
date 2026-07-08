@@ -12,16 +12,28 @@
         <h1>Productivity Dashboard</h1>
         <button>Dark mode</button>
       </nav>
-      <div class="dashboard">
-        <div class="dashboard-card" id="todo-list">Todo List</div>
-        <div class="dashboard-card" id="daily-planner">Daily Planner</div>
-        <div class="dashboard-card" id="weather-widget">Weather</div>
-        <div class="dashboard-card" id="time-date-display">Date Time</div>
-        <div class="dashboard-card" id="daily-goals">Daily Goals</div>
-        <div class="dashboard-card" id="motivation-quote">Motivation Quote</div>
-        <div class="dashboard-card" id="pomodoro-timer">Pomodoro Timer</div>
+
+      <div id="dashboard-div">
+        <div class="dashboard-card" id="dashboard-todo-list">Todo List</div>
+        <div class="dashboard-card" id="dashboard-daily-planner">
+          Daily Planner
+        </div>
+        <div class="dashboard-card" id="dashboard-motivation-quote">
+          Motivation Quote
+        </div>
+        <div class="dashboard-card" id="dashboard-weather-widget">Weather</div>
+        <div class="dashboard-card" id="dashboard-time-date-display">
+          Date Time
+        </div>
+        <div class="dashboard-card" id="dashboard-daily-goals">Daily Goals</div>
+        <div class="dashboard-card" id="dashboard-pomodoro-timer">
+          Pomodoro Timer
+        </div>
       </div>
+
       <div id="todo-list-div" style="display: none">
+        <button id="todo-list-back-btn">Back to dashboard</button>
+
         <form id="add-task-form">
           <label for="title">Title</label>
           <input type="text" name="title" id="add-task-title" required />
@@ -53,7 +65,10 @@
           </table>
         </div>
       </div>
-      <div id="daily-planner-div">
+
+      <div id="daily-planner-div" style="display: none">
+        <button id="daily-planner-back-btn">Back to dashboard</button>
+
         <h1>Daily Planner</h1>
         <form id="planner-form">
           <label for="starting-time">Starting Time</label>
@@ -87,9 +102,19 @@
           <tbody id="planner-table-body"></tbody>
         </table>
       </div>
+
+      <div id="motivation-quote-div" style="display: none;">
+        <button id="motivation-back-btn">Back to dashboard</button>
+
+        <div id="motivation-quote"></div>
+        <div id="quote-author"></div>
+        <button id="new-quote-btn">New Quote</button>
+      </div>
     </main>
     <script type="module" src="script.js"></script>
     <script type="module" src="JS Files/todoList.js"></script>
     <script type="module" src="JS Files/dailyPlanner.js"></script>
+    <script type="module" src="JS Files/dashboard.js"></script>
+    <script type="module" src="JS Files/motivationQuote.js"></script>
   </body>
 </html>
