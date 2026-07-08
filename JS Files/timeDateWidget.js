@@ -11,14 +11,15 @@ async function getTimeDate() {
     });
     const data = await response.json();
 
-    timeWidget.innerHTML = `${data.time}:${data.seconds}`;
+    timeWidget.innerHTML = `
+    ${data.hour > 12 ? String(data.hour-12).padStart(2, "0") : String(data.hour).padStart(2, "0")}:${String(data.minute).padStart(2, "0")} ${data.hour <= 12 ? "AM" : "PM"}`;
     dateWidget.innerHTML = data.date;
     dayWidget.innerHTML = data.dayOfWeek;
   } catch (error) {
     console.error(error);
   }
 }
-
+getTimeDate();
 setInterval(() => {
   getTimeDate();
 }, 1000);

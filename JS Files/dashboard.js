@@ -50,3 +50,9 @@ toggleBtwDashboardAndFeatures(
   "#pomodoro-back-btn",
 );
 
+// daily goals
+toggleBtwDashboardAndFeatures(
+  "#dashboard-daily-goals",
+  "#daily-goals-div",
+  "#goals-back-btn",
+);
